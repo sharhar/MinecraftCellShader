@@ -15,7 +15,7 @@ void main() {
 
    int levels = 5; // the number of brightness levels
    
-   float newBrightness = floor(colorBrightness * levels) / levels;
+   float newBrightness = max(0.04, floor(colorBrightness * levels) / levels);
 
    // Output the color
    gl_FragColor = vec4(normalize(Color) * newBrightness, 1.0f);
